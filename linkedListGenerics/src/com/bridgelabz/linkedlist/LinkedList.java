@@ -72,6 +72,7 @@ public class LinkedList<T> {
             System.out.println("Linked List is empty. Cannot pop.");
         }
     }
+
     /*
      * @name: popLast
      * @desc: Deletes the last element in the linked list (popLast operation).
@@ -115,6 +116,23 @@ public class LinkedList<T> {
     }
 
     /*
+     * @name: insertAfter
+     * @desc: Inserts a new node with the given data after a specific node in the linked list.
+     * @param: Node<T> prevNode, T data
+     * @return: void
+     */
+    public void insertAfter(Node<T> prevNode, T data) {
+        if (prevNode == null) {
+            System.out.println("Previous node cannot be null. Cannot insert.");
+            return;
+        }
+
+        Node<T> newNode = new Node<>(data);
+        newNode.next = prevNode.next;
+        prevNode.next = newNode;
+    }
+
+    /*
      * @name: display
      * @desc: Displays the elements of the linked list.
      * @return: void
@@ -127,5 +145,33 @@ public class LinkedList<T> {
         }
         System.out.println("null");
     }
+
+
+    /*
+     * @name: getHead
+     * @desc: Returns the head of the linked list.
+     * @return: Node<T> head
+     */
+    public Node<T> getHead() {
+        return head;
+    }
+
+    /*
+     * @name: toString
+     * @desc: Returns the string representation of the linked list.
+     * @return: String
+     */
+    @Override
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+        Node<T> current = head;
+        while (current != null) {
+            result.append(current.getData()).append(" -> ");
+            current = current.getNext();
+        }
+        result.append("null");
+        return result.toString();
+    }
+
 }
 
