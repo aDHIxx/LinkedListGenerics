@@ -16,12 +16,12 @@ public class LinkedList<T> {
     }
 
     /*
-     * @name: add
-     * @desc: Adds a new node with the given data to the linked list.
+     * @name: append
+     * @desc: Appends a new node with the given data to the linked list.
      * @param: T data
      * @return: void
      */
-    public void add(T data) {
+    public void append(T data) {
         Node<T> newNode = new Node<>(data);
         if (head == null) {
             head = newNode;
