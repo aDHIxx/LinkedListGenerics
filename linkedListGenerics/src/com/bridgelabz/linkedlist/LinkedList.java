@@ -72,6 +72,30 @@ public class LinkedList<T> {
             System.out.println("Linked List is empty. Cannot pop.");
         }
     }
+    /*
+     * @name: popLast
+     * @desc: Deletes the last element in the linked list (popLast operation).
+     * @return: void
+     */
+    public void popLast() {
+        if (head == null) {
+            System.out.println("Linked List is empty. Cannot popLast.");
+            return;
+        }
+
+        if (head.next == null) {
+            // If there's only one element, set head to null
+            head = null;
+        } else {
+            // Traverse to the second last node
+            Node<T> temp = head;
+            while (temp.next.next != null) {
+                temp = temp.next;
+            }
+            // Set the second last node's next to null
+            temp.next = null;
+        }
+    }
 
 
     /*

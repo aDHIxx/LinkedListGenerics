@@ -11,11 +11,11 @@ public class Main {
         System.out.println("Linked List before pop:");
         linkedList.display();
 
-        // Deleting the first element (pop)
-        linkedList.pop();
+        // Deleting the last element (popLast)
+        linkedList.popLast();
 
         // Displaying the elements of the linked list after pop
-        System.out.println("Linked List after pop:");
+        System.out.println("Linked List after pop (removing last ele):");
         linkedList.display();
     }
 }
