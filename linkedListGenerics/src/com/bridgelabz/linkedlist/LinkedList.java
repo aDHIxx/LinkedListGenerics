@@ -97,6 +97,22 @@ public class LinkedList<T> {
         }
     }
 
+    /*
+     * @name: search
+     * @desc: Searches the linked list to find a node with the given value.
+     * @param: T key
+     * @return: Node<T> foundNode or null if not found
+     */
+    public Node<T> search(T key) {
+        Node<T> temp = head;
+        while (temp != null) {
+            if (temp.data.equals(key)) {
+                return temp; // Node with the key found
+            }
+            temp = temp.next;
+        }
+        return null; // Node with the key not found
+    }
 
     /*
      * @name: display
