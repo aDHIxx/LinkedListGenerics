@@ -60,6 +60,19 @@ public class LinkedList<T> {
         }
     }
 
+    /*
+     * @name: pop
+     * @desc: Deletes the first element in the linked list (pop operation).
+     * @return: void
+     */
+    public void pop() {
+        if (head != null) {
+            head = head.next;
+        } else {
+            System.out.println("Linked List is empty. Cannot pop.");
+        }
+    }
+
 
     /*
      * @name: display
