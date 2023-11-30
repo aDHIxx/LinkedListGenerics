@@ -157,6 +157,54 @@ public class LinkedList<T> {
     }
 
     /*
+     * @name: delete
+     * @desc: Deletes the node with the given key from the linked list.
+     * @param: T key
+     * @return: void
+     */
+    public void delete(T key) {
+        Node<T> temp = head;
+        Node<T> prev = null;
+
+        // If head node itself holds the key to be deleted
+        if (temp != null && temp.data.equals(key)) {
+            head = temp.next;
+            return;
+        }
+
+        // Search for the key to be deleted, keep track of the previous node
+        while (temp != null && !temp.data.equals(key)) {
+            prev = temp;
+            temp = temp.next;
+        }
+
+        // If the key was not present in the linked list
+        if (temp == null) {
+            System.out.println("Node with key " + key + " not found.");
+            return;
+        }
+
+        // Unlink the node from the linked list
+        prev.next = temp.next;
+    }
+
+    /*
+     * @name: size
+     * @desc: Returns the size of the linked list.
+     * @return: int size
+     */
+    public int size() {
+        int count = 0;
+        Node<T> temp = head;
+        while (temp != null) {
+            count++;
+            temp = temp.next;
+        }
+        return count;
+    }
+
+
+    /*
      * @name: toString
      * @desc: Returns the string representation of the linked list.
      * @return: String

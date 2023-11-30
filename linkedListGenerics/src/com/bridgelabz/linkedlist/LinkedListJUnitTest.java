@@ -40,4 +40,34 @@ public class LinkedListJUnitTest {
         String actual = linkedList.toString();
         assertEquals(expected, actual);
     }
+
+    @Test
+    void testDelete() {
+        LinkedList<Integer> linkedList = new LinkedList<>();
+        linkedList.append(56);
+        linkedList.append(30);
+        linkedList.append(40);
+        linkedList.append(70);
+
+        // Displaying the elements of the linked list before delete
+        System.out.println("Linked List before delete:");
+        System.out.println(linkedList);
+
+        // Delete node with key value 40
+        linkedList.delete(40);
+
+        // Displaying the elements of the linked list after delete
+        System.out.println("Linked List after delete:");
+        System.out.println(linkedList);
+
+        // Validate the final sequence
+        String expected = "56 -> 30 -> 70 -> null";
+        String actual = linkedList.toString();
+        assertEquals(expected, actual);
+
+        // Validate the size of the linked list
+        int expectedSize = 3;
+        int actualSize = linkedList.size();
+        assertEquals(expectedSize, actualSize);
+    }
 }
