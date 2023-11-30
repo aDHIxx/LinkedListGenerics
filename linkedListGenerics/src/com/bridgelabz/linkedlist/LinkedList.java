@@ -35,6 +35,33 @@ public class LinkedList<T> {
     }
 
     /*
+     * @name: insert
+     * @desc: Inserts a new node with the given data after a specific node in the linked list.
+     * @param: T data
+     * @return: void
+     */
+    public void insert(T data) {
+        Node<T> newNode = new Node<>(data);
+        if (head == null) {
+            head = newNode;
+        } else {
+            // Inserting after the first node (56)
+            Node<T> temp = head;
+            while (temp != null && !temp.data.equals(56)) {
+                temp = temp.next;
+            }
+
+            if (temp != null) {
+                newNode.next = temp.next;
+                temp.next = newNode;
+            } else {
+                System.out.println("Node with data 56 not found.");
+            }
+        }
+    }
+
+
+    /*
      * @name: display
      * @desc: Displays the elements of the linked list.
      * @return: void
