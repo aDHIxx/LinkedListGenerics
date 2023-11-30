@@ -7,6 +7,10 @@ package com.bridgelabz.linkedlist;
 public class LinkedList<T> {
     private Node<T> head;
 
+    /*
+     * @name: LinkedList
+     * @desc: Constructor for the LinkedList class.
+     */
     public LinkedList() {
         this.head = null;
     }

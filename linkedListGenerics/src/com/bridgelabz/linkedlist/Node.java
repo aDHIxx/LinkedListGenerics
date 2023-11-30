@@ -8,6 +8,11 @@ public class Node<T> {
     T data;
     Node<T> next;
 
+    /*
+     * @name: Node
+     * @desc: Constructor for the Node class.
+     * @param: T data
+     */
     public Node(T data) {
         this.data = data;
         this.next = null;
